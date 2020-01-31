@@ -1,3 +1,3 @@
 # Rss Feed Add Eyecatch
 
-RSSフィード（XML）にアイキャッチ画像URLのitemを追加します
+RSSフィード（XML）の各itemにアイキャッチ画像取得用のMIMEを追加します

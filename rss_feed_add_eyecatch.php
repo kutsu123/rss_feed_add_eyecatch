@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin name: Rss Feed Add Eyecatch
- * Description: WordPressから出力されるRSSフィードにアイキャッチURLを新しいitemとして追加して出力
+ * Description: WordPressから出力されるRSSフィードにRSSフィード（XML）の各itemにアイキャッチ画像取得用のMIMEを追加します
  * Version: 0.1.0
  *
  * @package rss_feed_add_eyecatch
