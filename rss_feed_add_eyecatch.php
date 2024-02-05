@@ -12,7 +12,7 @@
 /**
  * プログラム参考：https://digipress.info/wordpress/tips/how-to-add-post-thumbnail-to-rss-feed/
  * rss2_item hook document：https://developer.wordpress.org/reference/hooks/rss2_item/
- * https://blog.ver001.com/mime_content_type/
+ * https://qiita.com/tkparasol/items/8ba07aab16f50357f5b3
  * https://www.php.net/manual/ja/function.image-type-to-mime-type.php
  */
 
