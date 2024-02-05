@@ -38,14 +38,12 @@ function rfae_add_item_eyecatch( $size = 'thumbnail' ) {
 		$image_width  = $thumbnail[1];
 		$image_height = $thumbnail[2];
 
-		// アイキャッチ画像の名前を取得.
-		$image_file_name = basename( $image_url );
+		// アイキャッチ画像の MIME タイプを取得.
+		$image_info = getimagesize( $image_url );
+		$mime_type  = $image_info['mime'];
 
 		// 許可する画像のタイプを配列で宣言.
 		$mime_type_array = array( 'image/gif', 'image/jpeg', 'image/png', 'image/webp' );
-
-		// 取得したアイキャッチ画像の MIME タイプを取得.
-		$mime_type = mime_content_type_image( $image_file_name );
 
 		// 許可する MIME タイプに合致した場合のみ出力する.
 		if ( in_array( $mime_type, $mime_type_array, true ) ) {
@@ -62,21 +60,3 @@ function rfae_add_item_eyecatch( $size = 'thumbnail' ) {
 	echo $output; // phpcs:ignore
 }
 add_action( 'rss2_item', 'rfae_add_item_eyecatch' );
-
-/**
- * 画像ファイルの MIME タイプを返す関数
- *
- * @param String $filename 画像の名前.
- */
-function mime_content_type_image( $filename ) {
-	// PHP の関数 getimagesize で画像の情報を取得.
-	list( $w, $h, $type ) = getimagesize( $filename );
-
-	// $type に画像の MIME タイプが入っていなければカラを返す（画像以外はこちら）.
-	if ( ! $type ) {
-		return '';
-	} else {
-		// PHP の関数 getimagesize から返される画像形式の MIME タイプを取得し返す.
-		return image_type_to_mime_type( $type );
-	}
-}
